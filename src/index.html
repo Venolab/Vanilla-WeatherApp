@@ -16,33 +16,43 @@
   <script src="src/app.js"></script>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <h1>New York</h1>
-        <h2>
-          <ul>
-            <li>Friday 05:00</li>
-            <li>Clear</li>
-            <div class="row">
-              <div class="col-6">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  alt="partly_cloudy"
-                />
-                63°C|°F
-                <br />
-              </div>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="overview">
+          <h1>New York</h1>
+          <h2>
+            <ul>
+              <li>Friday 05:00</li>
+              <li>Clear</li>
               <div class="row">
                 <div class="col-6">
-                  <ul>
-                    <li>Precipitation: 15%</li>
-                    <li>Humidity: 53%</li>
-                    <li>Wind: 6 mph</li>
-                  </ul>
+                  <div class="clearfix weather-temperature">
+                    <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                    alt="clear" class="float-left"
+                  </div>
+                  <div class="float-left">
+                    <strong>12</strong>
+                    <span class="units"> °C|<a href="#">°F</a> </span>
+                  </div>
+                </div>
+              </ul>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="float-left">
+                      <ul>
+                        <li>Precipitation: 15%</li>
+                        <li>Humidity: 53%</li>
+                        <li>Wind: 6 mph</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </ul>
-        </h2>
+            </ul>
+          </h2>
+        </div>
       </div>
     </div>
     <small>
