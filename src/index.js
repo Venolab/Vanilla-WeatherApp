@@ -28,12 +28,14 @@ function displayTemperature(response) {
   let humidityElement = (document.querySelector = "#humidity");
   let windElement = (document.querySelector = "#wind");
   let dateElement = (document.querySelector = "#date");
+  let iconElement = (document.querySelector = "#icon");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.main.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   windElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data, wind.speed);
   DataElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute("Alt",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)=
 }
 
 let apikey = "e3015a327d1663bfa913f4b1041aef6e";
