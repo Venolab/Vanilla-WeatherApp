@@ -35,7 +35,7 @@ function displayTemperature(response) {
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.main.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
-  windElement.innerHTML = response.data.main.humidity;
+  humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data, wind.speed);
   DataElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
@@ -77,6 +77,20 @@ function celsiusTemperature(event) {
 
 function WeatherForecastPreview(event) {
   event.preventDefault;
+  let forecastTemperature = document.querySelector("#forecast-temperature");
+  let forecastdays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let forecastday = days[date.getDay()];
+  letforecastIcon = document.querySelector("#forecast-icon");
+  forecastIcon.innerHTML = data.weather.icon;
+  return `${day}  ${icon} ${fahrenheitTemperature} ${celsiusTemperature}`;
 }
 
 let celsiusTemperature = null;
