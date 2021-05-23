@@ -25,7 +25,7 @@ function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
-  let humidityElement = (document.querySelector = "#humidity");
+  let humidityElement = Math.round((document.querySelector = "#humidity"));
   let windElement = (document.querySelector = "#wind");
   let dateElement = (document.querySelector = "#date");
   let iconElement = (document.querySelector = "#icon");
