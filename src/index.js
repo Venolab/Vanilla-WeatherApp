@@ -75,6 +75,10 @@ function celsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+function WeatherForecastPreview(event) {
+  event.preventDefault;
+}
+
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
@@ -84,4 +88,7 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayfahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displaycelsiusTemperature);
+
+let WeatherForecastPreview = `api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}`;
+
 search("New York");
