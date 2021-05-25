@@ -20,7 +20,6 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
-
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -29,9 +28,7 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
-
   celsiusTemperature = response.data.main.temp;
-
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -44,19 +41,16 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-
 function search(city) {
   let apikey = "e3015a327d1663bfa913f4b1041aef6e";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
-
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
-
 function displayfahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
@@ -66,7 +60,6 @@ function displayfahrenheitTemperature(event) {
   alert(FahrenheitTemperature);
   temperatureElement.innerHTML = Math.round(FahrenheitTemperature);
 }
-
 function displaycelsiusTemperature(event) {
   event.preventDefault;
   celsiusLink.classList.add("active");
@@ -74,7 +67,6 @@ function displaycelsiusTemperature(event) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
-
 function WeatherForecastPreview(event) {
   event.preventDefault();
   let forecastTemperature = document.querySelector("#forecast-temperature");
@@ -92,15 +84,11 @@ function WeatherForecastPreview(event) {
   forecastIcon.innerHTML = data.weather.icon;
   return `${day}  ${icon} ${fahrenheitTemperature} ${celsiusTemperature}`;
 }
-
 let celsiusTemperature = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayfahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displaycelsiusTemperature);
-
 search("New York");
