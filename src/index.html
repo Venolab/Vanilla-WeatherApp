@@ -11,102 +11,103 @@
       crossorigin="anonymous"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
-  <div class="container">
-    <div class="weather-app-wrapper">
-      <div class="weather=app">
-        <form id="search-form" class="mb-3">
-          <div class="row">
-            <div class="col-9">
-          <input type="search" placeholder="Enter city name"
-          class="form-control"
-          id="city-input"
-          autocomplete="off"
-          />
-          </div>
-          <div class="col-3"> 
-          <input type="submit" value="search" class="btn btn-primary w-100" />
-          </div>
-        </form>
-        <div class="overview">
-          <h1 id="city">New York</h1>
-          <ul>
-            <li id="date">Last Updated at</li>
-            <li id="descriptions">Clear</li>
-          </ul>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <div class="clearfix weather-tempurature">
-              <img
-                src=""
-                alt="Clear"
-                id="icon"
-                class="float left"
-              />
-              <strong id="temperature">12</strong
-              ><span class="units">|<a href="#" id="celsius-link" class="active">°C</a>|<a href="#" id="fahrenheit-link">°F</a></span>
+  <body>
+    <div class="container">
+      <div class="weather-app-wrapper">
+        <div class="weather=app">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Enter city name"
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="search"
+                  class="btn btn-primary w-100"
+                />
+              </div>
             </div>
+          </form>
+          <div class="overview">
+            <h1 id="city">New York</h1>
+            <ul>
+              <li id="date">Last Updated at</li>
+              <li id="description">Clear</li>
+            </ul>
           </div>
           <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-tempurature">
+                <img src="" alt="Clear" id="icon" class="float left" />
+                <strong id="temperature">12</strong
+                ><span class="units"
+                  >|<a href="#" id="celsius-link" class="active">°C</a>|<a
+                    href="#"
+                    id="fahrenheit-link"
+                    >°F</a
+                  ></span
+                >
+              </div>
+            </div>
             <div class="col-6">
               <ul>
                 <li>Humidity: <span id="humidity">%</span></li>
                 <li>Wind: <span id="wind"></span> km/h</li>
               </ul>
-              <div class="container" id="forcast">
-  <div class="WeatherForcast row">
-    <div class="WeatherForecastPreview">
-<div class="forecast-time">Sun</div><canvas width="38" height="38">
-</canvas>
-<div class="forecast-temperature">°<span class="forecast-icon"> </span>
-</div>
-</div>
-<div class="WeatherForecastPreview">
-<div class="forecast-time">Mon</div><canvas width="38" height="38">
-</canvas>
-<div class="forecast-time">°<span class="forecast-icon"> </span>
-</div>
-</div>
-<div class="WeatherForecastPreview">
-<div class="forecast-time">Tue</div><canvas width="38" height="38">
-</canvas>
-<div class="forecast-temperature">°<span class="forecast-temperature-max">31°</span>
-</div>
-</div>
-<div class="WeatherForecastPreview">
-<div class="forecast-time">Wed</div><canvas width="38" height="38">
-</canvas>
-<div class="forecast-temperature">°<span class="forecast-temperature-max">31°</span>
-</div>
-</div>
-<div class="WeatherForecastPreview">
-<div class="forecast-time">Thu</div><canvas width="38" height="38">
-</canvas>
-<div class="forecast-temperature">°<span class="forecast-temperature-max">31°</span>
-</div>
-</div>
-  </div>
-</div>
-              <small>
-                <a
-                  href="https://github.com/Venolab/Vanilla-WeatherApp.git"
-                  <open
-                  Source
-                  by,
-                  Venola
-                  Brooks
-                >
-                </a>
-              </small>
+            </div>
+          </div>
+        </div>
+        <div class="container" id="forcast">
+          <div class="WeatherForcast row">
+            <div class="WeatherForecastPreview col">
+              <div class="forecast-time">Sun</div>
+              <div class="forecast-temperature">
+                °<span class="forecast-icon"> </span>
+              </div>
+            </div>
+            <div class="WeatherForecastPreview col">
+              <div class="forecast-time">Mon</div>
+              <div class="forecast-time">
+                °<span class="forecast-icon"> </span>
+              </div>
+            </div>
+            <div class="WeatherForecastPreview col">
+              <div class="forecast-time">Tue</div>
+              <div class="forecast-temperature">
+                °<span class="forecast-temperature-max">31°</span>
+              </div>
+            </div>
+            <div class="WeatherForecastPreview col">
+              <div class="forecast-time">Wed</div>
+              <div class="forecast-temperature">
+                °<span class="forecast-temperature-max">31°</span>
+              </div>
+            </div>
+            <div class="WeatherForecastPreview col">
+              <div class="forecast-time">Thu</div>
+              <div class="forecast-temperature">
+                °<span class="forecast-temperature-max">31°</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <small>
+        <a href="https://github.com/Venolab/Vanilla-WeatherApp.git"
+          >Open Source by, Venola Brooks
+        </a>
+      </small>
     </div>
-  </div>
-  <script src="src/app.js"></script>
-  <body></body>
+    <script src="src/index.js"></script>
+  </body>
 </html>

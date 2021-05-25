@@ -1,5 +1,5 @@
 function formatDate(timestamp) {
-  let date = new date(timestamp);
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -25,30 +25,30 @@ function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
-  let humidityElement = Math.round((document.querySelector = "#humidity"));
-  let windElement = (document.querySelector = "#wind");
-  let dateElement = (document.querySelector = "#date");
-  let iconElement = (document.querySelector = "#icon");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
-  cityElement.innerHTML = response.data.main.name;
+  cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
-  windElement.innerHTML = Math.round(response.data, wind.speed);
-  DataElement.innerHTML = formatDate(response.data.dt * 1000);
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  iconElement.setAttribute("Alt,response.data.weather[0].description");
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(city) {
   let apikey = "e3015a327d1663bfa913f4b1041aef6e";
-  let apiUrl = `api.openweathermap.org/data/2.5/weather?q=London&appid=${apikey}&units=metrics`;
-  axiox.get(apiUrl).then(displayTemperature);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 function handleSubmit(event) {
@@ -57,9 +57,9 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function fahrenheitLink(event) {
+function displayfahrenheitTemperature(event) {
   event.preventDefault();
-  let temperatureElement = Document.querySelector("#temperature");
+  let temperatureElement = document.querySelector("#temperature");
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let FahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
@@ -67,16 +67,16 @@ function fahrenheitLink(event) {
   temperatureElement.innerHTML = Math.round(FahrenheitTemperature);
 }
 
-function celsiusTemperature(event) {
+function displaycelsiusTemperature(event) {
   event.preventDefault;
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-  let temperatureElement = Document.querySelector("#temperature");
+  let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 function WeatherForecastPreview(event) {
-  event.preventDefault;
+  event.preventDefault();
   let forecastTemperature = document.querySelector("#forecast-temperature");
   let forecastdays = [
     "Sunday",
@@ -102,7 +102,5 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayfahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displaycelsiusTemperature);
-
-let WeatherForecastPreview = `api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}`;
 
 search("New York");
