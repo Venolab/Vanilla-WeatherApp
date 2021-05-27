@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
   background: linear-gradient(to top, #eee3de 0%, #ace0f9 100%);
   margin: 20px;
 }
@@ -18,7 +18,7 @@ ul {
 }
 li {
   list-style: none;
-   text-decoration: none; 
+  text-decoration: none;
   margin: 0;
   padding: 0;
   color: rgb(56, 53, 53);
@@ -32,7 +32,7 @@ li ::first-letter {
 }
 .weather-app-wrapper {
   max-width: 600px;
-  max-height:600px;
+  max-height: auto;
   margin: 30px auto;
 }
 
@@ -83,25 +83,25 @@ li ::first-letter {
   opacity: 0.5;
 }
 
-  a .celsius-link {
-    color: #0060B6;
-    text-decoration: none;
+a .celsius-link {
+  color: #0060b6;
+  text-decoration: none;
 }
 
 a:hover {
-    color:#00A0C6; 
-    text-decoration:none; 
-    cursor:pointer;  
+  color: #00a0c6;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 a .fahrenheit-link {
   list-style: none;
-    color: #0060B6;
-    text-decoration: none;
+  color: #0060b6;
+  text-decoration: none;
 }
 
 a:hover {
-    color:#00A0C6; 
-    text-decoration:none; 
-    cursor:pointer;  
+  color: #00a0c6;
+  text-decoration: none;
+  cursor: pointer;
 }
