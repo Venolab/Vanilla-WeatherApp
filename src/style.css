@@ -3,6 +3,7 @@ body {
   background: linear-gradient(to top, #eee3de 0%, #ace0f9 100%);
 
 h1 {
+  text-decoration: none;
   color: #2c2d2e;
   font-size: 24px;
   font-weight: 100;
@@ -15,7 +16,7 @@ ul {
 }
 li {
   list-style: none;
-   text-decoration: none;
+   text-decoration: none; 
   margin: 0;
   padding: 0;
   color: rgb(56, 53, 53);
