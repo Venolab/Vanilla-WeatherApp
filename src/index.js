@@ -1,7 +1,3 @@
-var body=document.querySelector("#body");
-body.width = window.innerWidth;
-body.height = window.innerHeight;
-
 function formatDate(timestamp) {
    let date = new Date(timestamp);
    let hours = date.getHours();
